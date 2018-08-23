@@ -5,6 +5,7 @@
     <arg name="robot_name" default="iiwa" />
     <arg name="description_file" default ="$(find rll_description)/urdf/rll_main.urdf.xacro" />
     <arg name="headless" default="false"/>
+    <arg name="gui" default="true"/>
 
     <!-- Loads the Gazebo world. -->
     <include file="$(find rll_gazebo)/launch/rll_world.launch">
@@ -12,6 +13,7 @@
         <arg name="robot_name" value="$(arg robot_name)" />
         <arg name="description_file" value="$(arg description_file)" />
         <arg name="headless" value="$(arg headless)" />
+        <arg name="gui" value="$(arg gui)"/>
     </include>
 
     <!-- Spawn controllers - it uses a JointTrajectoryController -->

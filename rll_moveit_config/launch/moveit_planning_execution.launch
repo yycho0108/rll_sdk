@@ -5,6 +5,7 @@
   <arg name="headless" default="false"/>
   <arg name="description_file" default ="$(find rll_description)/urdf/rll_main.urdf.xacro" />
   <arg name="rviz_config" default ="$(find rll_moveit_config)/launch/moveit.rviz" />
+  <arg name="gui" default="true"/>
 
   <remap from="/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory"
          to="/$(arg robot_name)/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory" />
@@ -19,6 +20,7 @@
     <arg name="robot_name" value="$(arg robot_name)" />
     <arg name="description_file" value="$(arg description_file)" />
     <arg name="headless" value="$(arg headless)" />
+    <arg name="gui" value="$(arg gui)"/>
   </include>
 
   <!-- Load move_group -->
